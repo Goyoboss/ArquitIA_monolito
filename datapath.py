@@ -1,5 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("Telco_Customer_Churn.csv")
+data = pd.read_csv("Telco_Customer_Churn.csv")
+df = data.drop(columns=["customerID"])
 
 print(df.head())
