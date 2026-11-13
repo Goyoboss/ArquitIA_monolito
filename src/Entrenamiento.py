@@ -46,6 +46,8 @@ def entrenamiento(df, objetivo, model):
     print(f"F1 en entrenamiento: {f1_train:.2f}\nF1 en prueba: {f1_test:.2f}\n")
     print("Matriz de confusión:\n", cm)
 
+    return acc_train, acc_test, pre_train, pre_test, rec_train, rec_test, f1_train, f1_test, cm
+
 Regresion_Logistica = LogisticRegression(max_iter=1000) # 'l2' ya es el valor por defecto
 Arbol_Decision = DecisionTreeClassifier(max_depth=10, min_samples_split=30, min_samples_leaf=7)
 
