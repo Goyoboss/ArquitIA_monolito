@@ -8,4 +8,4 @@ df = load_data()
 print("El mejor modelo fue el clasificador con Regresión logística")
 
 Regresion_Logistica = LogisticRegression(max_iter=1000, penalty='l2')
-entrenamiento(df, "Churn", Regresion_Logistica)
+entrenamiento(df, "target", Regresion_Logistica)
