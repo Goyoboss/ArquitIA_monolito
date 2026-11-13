@@ -1,9 +1,9 @@
 #El mejor modelo fue regresión logística, pero no entiendo porque sale el 100%
-
-from sklearn.metrics import confusion_matrix
 from Entrenamiento import entrenamiento
-from datapath import df
+from datapath import load_data
 from sklearn.linear_model import LogisticRegression
+
+df = load_data()
 
 print("El mejor modelo fue el clasificador con Regresión logística")
 
