@@ -15,21 +15,10 @@ def entrenamiento(df, objetivo, model):
     X = df.drop(objetivo, axis=1)
     #Vector objetivo
     y = df[objetivo]
-    #Columnas numéricas para su posterior estandarización
-    col_nums = X.select_dtypes(include = np.number).columns.to_list()
-    #Columnas categóricas para su posterior codificación
-    col_cat = X.select_dtypes(include = ['category', 'object']).columns.to_list()
 
     scaler = StandardScaler()
-    encoder = OneHotEncoder(drop='first', sparse_output=False)
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', scaler, col_nums),
-            ('cat', encoder, col_cat)
-        ]
-        ,remainder='drop'
-    )
-    X_processed = preprocessor.fit_transform(X)
+
+    X_processed = scaler.fit_transform(X)
 
     #División del conjunto de datos en 80-20
     X_train, X_test, y_train, y_test = train_test_split(X_processed, y, test_size=0.2, random_state=42)

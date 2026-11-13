@@ -1,6 +1,8 @@
 import pandas as pd
+from sklearn.datasets import load_wine
 
-data = pd.read_csv("Telco_Customer_Churn.csv")
-df = data.drop(columns=["customerID"])
+data = load_wine()
+df = pd.DataFrame(data.data, columns=data.feature_names)
+df['target'] = data.target
 
 print(df.head())
