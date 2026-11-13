@@ -1,5 +1,4 @@
-#El mejor modelo tomando en cuenta la métrica F1 (por la existencia de clases desbalanceadas) 
-#es regresión logística –aunque los dos cuentan con un sobreajuste significativo
+#El mejor modelo fue regresión logística, pero no entiendo porque sale el 100%
 
 from sklearn.metrics import confusion_matrix
 from Entrenamiento import entrenamiento
