@@ -49,5 +49,7 @@ def entrenamiento(df, objetivo, model):
 Regresion_Logistica = LogisticRegression(max_iter=1000) # 'l2' ya es el valor por defecto
 Arbol_Decision = DecisionTreeClassifier(max_depth=10, min_samples_split=30, min_samples_leaf=7)
 
-entrenamiento(df, "target", Regresion_Logistica)
-entrenamiento(df, "target", Arbol_Decision)
+reglog = entrenamiento(df, "target", Regresion_Logistica)
+print(reglog)
+arbol = entrenamiento(df, "target", Arbol_Decision)
+print(arbol)
