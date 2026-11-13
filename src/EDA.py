@@ -8,7 +8,7 @@ print("Información general del dataset: \n", df.info())
 def pie_plot(df, column):
   pie = plt.figure(figsize=(5,8))
   plt.pie(df[column].value_counts(), labels=df[column].value_counts().index, autopct='%1.1f%%')
-  plt.title = f"Distribución de {column}"
+  plt.title = f"Distribución de la variable"
   labels = df[column].value_counts().index
   plt.legend(labels)
   return plt.show()
